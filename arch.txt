@@ -8,13 +8,24 @@ crypto_parser
 │   ├── config.yaml
 |   └── model.go
 │
+├── docs
+│   ├── docs.go
+│   ├── swagger.json
+|   └── swagger.yaml
+│
 ├── internal
 │   ├── app
 │   │   └── app.go
 │   │
 │   ├── delivery
 │   │   └── http
+|   |       ├── middleware
+|   |       |   ├── CORS-middleware.go
+|   |       |   ├── middleware.go
+|   |       |   └── module.go
+|   |       |
 |   |       └── server
+|   |           ├── models.go
 |   |           ├── module.go
 |   |           ├── router.go
 |   |           └── server.go
@@ -33,13 +44,13 @@ crypto_parser
 |       └── usecase.go
 │
 ├── pkg
-│   ├── db_container
-│   │   ├── Dockerfile
-│   │   └── init.sql
-|   |
 │   ├── binanceParser
 │   │   ├── client.go
 │   │   └── models.go
+|   |
+│   ├── db_container
+│   │   ├── Dockerfile
+│   │   └── init.sql
 │   |
 |   └── proto
 |       ├── auth.proto
