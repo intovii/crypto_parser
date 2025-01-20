@@ -34,3 +34,14 @@ docker compose down -v
 
 ## Документация OpenAPI
 Для получения детальной информации по запосам, ответам и параметрам перейдите по ссылке `http://localhost:3000/swagger/index.html` после запуска проекта.
+
+## Тестирование
+Postman.
+Импортируйте `TestCryptoParser.postman_collection.json`.
+- 4 Запроса:
+    - запрос к API binance:
+        `BinanceAPI` для быстрой и удобной проверки;
+    - запросы к разработанному API:
+        `CurrencyAdd` для создания валютной пары `BTCUSDT`;
+        `CurrencyRemove` для удаления валютной пары `BTCUSDT`;
+        `CurrencyPrice` для получения цены по валютной паре `BTCUSDT` в момент времени `1737392194`.
