@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  currency:
+    build: ./pkg/db_container
+    container_name: currency
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "6132:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./pkg/db_container/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./pkg/db_container/insert_test_data.sql:/docker-entrypoint-initdb.d/insert_test_data.sql
+    restart: always
+    networks:
+      - my_net
+
+  crypto_parser:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: crypto_parser:latest
+    container_name: crypto_parser
+    ports:
+      - "3000:3000"
+    networks:
+      - my_net
+    restart: always
+    depends_on:
+      - currency
+
+
+volumes:
+  pg_data:
+
+
+networks:
+  my_net:

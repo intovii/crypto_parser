@@ -1,0 +1,18 @@
+service_name: "video_courses"
+
+Postgres:
+  # host: "127.0.0.1"
+  port: "5432"
+  host: "currency"
+  # port: "6132"
+  user: "postgres"
+  password: "password"
+  DBName: "currency"
+  sslMode: "allow"
+
+Server: #http
+  # host: "127.0.0.1"
+  host: "0.0.0.0"
+  port: "3000"
+
+Secret: "lio2UbeLoKlYuJ7LDR+kSxUPQDHbaekq"

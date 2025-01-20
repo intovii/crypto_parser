@@ -1,0 +1,52 @@
+crypto_parser
+│
+├── cmd
+│   └── main.go
+│
+├── config
+│   ├── config.go
+│   ├── config.yaml
+|   └── model.go
+│
+├── internal
+│   ├── app
+│   │   └── app.go
+│   │
+│   ├── delivery
+│   │   └── http
+|   |       └── server
+|   |           ├── module.go
+|   |           ├── router.go
+|   |           └── server.go
+│   │
+│   ├── entities
+│   │   └── entities.go
+│   │
+│   ├── repository
+│   │   ├── postgres
+|   |   |   └── postgres.go
+|   |   |
+│   │   └── repository.go
+│   │
+│   └── usecase
+|       ├── module.go
+|       └── usecase.go
+│
+├── pkg
+│   ├── db_container
+│   │   ├── Dockerfile
+│   │   └── init.sql
+|   |
+│   ├── binanceParser
+│   │   ├── client.go
+│   │   └── models.go
+│   |
+|   └── proto
+|       ├── auth.proto
+|       ├── buf.gen.yaml
+|       └── buf.yaml
+│
+├── docker-compose.yaml
+├── Dockerfile
+├── go.mod
+└── go.sum
