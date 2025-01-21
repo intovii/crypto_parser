@@ -11,9 +11,6 @@ func New() fx.Option {
 		fx.Provide(
 			NewUsecase,
 		),
-		fx.Decorate(func(log *zap.Logger) *zap.Logger {
-			return log.Named("usecase")
-		}),
 		fx.Invoke(
 			func(lc fx.Lifecycle, uc *Usecase) {
 				lc.Append(fx.Hook{
@@ -22,5 +19,8 @@ func New() fx.Option {
 				})
 			},
 		),
+		fx.Decorate(func(log *zap.Logger) *zap.Logger {
+			return log.Named("usecase")
+		}),
 	)
 }

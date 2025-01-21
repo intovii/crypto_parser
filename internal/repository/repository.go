@@ -4,6 +4,7 @@ import (
 	"CryptoParser/internal/repository/postgres"
 
 	"go.uber.org/fx"
+	"go.uber.org/zap"
 )
 
 func New() fx.Option {
@@ -19,5 +20,8 @@ func New() fx.Option {
 				})
 			},
 		),
+		fx.Decorate(func(log *zap.Logger) *zap.Logger {
+			return log.Named("usecase")
+		}),
 	)
 }
